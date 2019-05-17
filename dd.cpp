@@ -10,7 +10,11 @@ DD::DD(QWidget* parent) : QMainWindow(parent), ui(new Ui::DD) {
   buffer = new char[500];
 }
 
-DD::~DD() { delete ui; }
+DD::~DD() {
+  delete tim;
+  delete[] buffer;
+  delete ui;
+}
 
 void DD::findDevises() {
   const QString nameFilter = "sd*";
